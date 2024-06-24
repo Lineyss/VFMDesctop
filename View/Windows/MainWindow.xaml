@@ -3,8 +3,12 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:VFMDesctop.View" xmlns:windows="clr-namespace:VFMDesctop.ViewController.Windows" 
-        DataContext=""
+        xmlns:local="clr-namespace:VFMDesctop.View" 
+        xmlns:windows="clr-namespace:VFMDesctop.ViewModels.Windows"
+    
+        xmlns:viewmodel="clr-namespace:VFMDesctop.ViewModels.Windows"
+        d:DataContext="{d:DesignInstance Type=viewmodel:MainWindowController}"
+                
         mc:Ignorable="d"
         MinHeight="430" MinWidth="350" MaxHeight="430" MaxWidth="350">
 
@@ -21,7 +25,9 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Background="White" BorderBrush="White">
+            <Button Background="White" 
+                    BorderBrush="{Binding backgroundButtonMainPage}" 
+                    IsEnabled="{Binding isEnabledButtonMainPage}">
                 <Image Source="/Images/Home.ico" Height="28" Width="44"/>
             </Button>
 
@@ -30,8 +36,6 @@
             </Button>
 
         </Grid>
-
-        <Frame Grid.Row="1" NavigationUIVisibility="Hidden" Content="{Binding frameContent}"/>
 
     </Grid>
 

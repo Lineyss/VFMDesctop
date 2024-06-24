@@ -5,8 +5,5 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VFMDesctop.View.Pages"
         mc:Ignorable="d"
-        Title="MainPage" Height="450" Width="800">
-    <Grid>
-        <Label Content="Главное"/>
-    </Grid>
+        Title="MainPage" Height="450" Width="800" Background="Red">
 </Page>

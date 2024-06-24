@@ -6,9 +6,6 @@
       xmlns:local="clr-namespace:VFMDesctop.View.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="ProfilPage">
+      Title="ProfilPage" Background="#FF1F00FF">
 
-    <Grid>
-        <Label Content="Профиль"/>
-    </Grid>
 </Page>
