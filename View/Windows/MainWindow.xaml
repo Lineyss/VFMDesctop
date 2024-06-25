@@ -5,10 +5,6 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:VFMDesctop.View" 
         xmlns:windows="clr-namespace:VFMDesctop.ViewModels.Windows"
-    
-        xmlns:viewmodel="clr-namespace:VFMDesctop.ViewModels.Windows"
-        d:DataContext="{d:DesignInstance Type=viewmodel:MainWindowController}"
-                
         mc:Ignorable="d"
         MinHeight="430" MinWidth="350" MaxHeight="430" MaxWidth="350">
 
@@ -19,24 +15,26 @@
             <RowDefinition Height="10*"/>
         </Grid.RowDefinitions>
 
-        <Grid>
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*"/>
-                <ColumnDefinition Width="1*"/>
-            </Grid.ColumnDefinitions>
-
-            <Button Background="White" 
-                    BorderBrush="{Binding backgroundButtonMainPage}" 
-                    IsEnabled="{Binding isEnabledButtonMainPage}">
-                <Image Source="/Images/Home.ico" Height="28" Width="44"/>
+        <StackPanel Orientation="Horizontal" Panel.ZIndex="2">
+            <Button Name="exit" 
+                    Grid.Column="1" 
+                    Command="{Binding exitButton_mouseClick}">
+                <Button.Background>
+                    <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
+                </Button.Background>
+                <Button.BorderBrush>
+                    <SolidColorBrush Color="#FF707070" Opacity="0"/>
+                </Button.BorderBrush>
+                <Image Source="/Images/Exit.ico" Height="30" Width="44"/>
             </Button>
+        </StackPanel>
 
-            <Button Grid.Column="1" Background="White" BorderBrush="White">
-                <Image Source="/Images/Profile.ico" Height="28" Width="44"/>
-            </Button>
-
+        <Grid Grid.Row="1">
+            
+            
+            
         </Grid>
-
+        
     </Grid>
 
 </Window>

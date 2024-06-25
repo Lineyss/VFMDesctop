@@ -18,9 +18,9 @@ namespace VFMDesctop.View.Pages
     /// <summary>
     /// Логика взаимодействия для ProfilPage.xaml
     /// </summary>
-    public partial class ProfilPage : Page
+    public partial class ProfilePage : Page
     {
-        public ProfilPage()
+        public ProfilePage()
         {
             InitializeComponent();
         }

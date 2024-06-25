@@ -1,4 +1,6 @@
-﻿using System.Windows;
+﻿using System.Runtime.Remoting.Contexts;
+using System.Windows;
+using VFMDesctop.ViewModels.Windows;
 
 namespace VFMDesctop.View
 {
@@ -10,6 +12,7 @@ namespace VFMDesctop.View
         public MainWindow()
         {
             InitializeComponent();
+            DataContext = new MainWindowViewModel();
         }
     }
 }

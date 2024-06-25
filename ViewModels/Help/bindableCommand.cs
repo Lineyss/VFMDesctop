@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace VFMDesctop.ViewModels.Help
 {
-    class bindableCommand : ICommand
+    class BindableCommand : ICommand
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
@@ -12,7 +12,7 @@ namespace VFMDesctop.ViewModels.Help
             add { CommandManager.RequerySuggested += value; }
             remove { CommandManager.RequerySuggested -= value; }
         }
-        public bindableCommand(Action<object> execute, Func<object, bool> canExecute = null)
+        public BindableCommand(Action<object> execute, Func<object, bool> canExecute = null)
         {
             _execute = execute;
             _canExecute = canExecute;
