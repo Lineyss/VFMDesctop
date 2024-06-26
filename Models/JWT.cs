@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace VFMDesctop.Models
 {
-    internal class User
+    internal class JWT
     {
-        public Guid id { get; set; }
-        public string email { get; set; }
-        public string password { get; set; }
+        public string token { get; set; }
+        public string refreshToken { get; set; }
     }
 }

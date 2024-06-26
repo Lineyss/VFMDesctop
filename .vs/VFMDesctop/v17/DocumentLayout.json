@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "D:\\Project\\VFM\\VFMDesctop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\view\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:view\\windows\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\view\\windows\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:view\\windows\\mainwindow.xaml||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|D:\\Project\\VFM\\VFMDesctop\\viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:viewmodels\\windows\\mainwindowviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\view\\pages\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:view\\pages\\profilepage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|D:\\Project\\VFM\\VFMDesctop\\models\\services\\httpworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\services\\httpworker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|D:\\Project\\VFM\\VFMDesctop\\models\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\services\\authservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -83,57 +83,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "User.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\User.cs",
-              "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\User.cs",
-              "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T11:35:57.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AuthService.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\AuthService.cs",
-              "RelativeDocumentMoniker": "Models\\Services\\AuthService.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\AuthService.cs",
-              "RelativeToolTip": "Models\\Services\\AuthService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T11:35:45.785Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ProfilePage.xaml",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\View\\Pages\\ProfilePage.xaml",
-              "RelativeDocumentMoniker": "View\\Pages\\ProfilePage.xaml",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\View\\Pages\\ProfilePage.xaml",
-              "RelativeToolTip": "View\\Pages\\ProfilePage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-06-25T10:47:13.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MainWindowViewModel.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\ViewModels\\Windows\\MainWindowViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Windows\\MainWindowViewModel.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\ViewModels\\Windows\\MainWindowViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Windows\\MainWindowViewModel.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAA1wBkAAAAoAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-25T09:47:50.549Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\View\\Windows\\MainWindow.xaml",
               "RelativeDocumentMoniker": "View\\Windows\\MainWindow.xaml",
@@ -141,6 +90,61 @@
               "RelativeToolTip": "View\\Windows\\MainWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-06-25T09:47:01.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HttpWorker.cs",
+              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\HttpWorker.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\HttpWorker.cs",
+              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\HttpWorker.cs",
+              "RelativeToolTip": "Models\\Services\\HttpWorker.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAABwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T12:31:32.289Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "AuthService.cs",
+              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\AuthService.cs",
+              "RelativeDocumentMoniker": "Models\\Services\\AuthService.cs",
+              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\AuthService.cs",
+              "RelativeToolTip": "Models\\Services\\AuthService.cs",
+              "ViewState": "AQIAABQAAAAAAAAAAADwvxsAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T11:35:45.785Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MainWindowViewModel.cs",
+              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\ViewModels\\Windows\\MainWindowViewModel.cs",
+              "RelativeDocumentMoniker": "ViewModels\\Windows\\MainWindowViewModel.cs",
+              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\ViewModels\\Windows\\MainWindowViewModel.cs",
+              "RelativeToolTip": "ViewModels\\Windows\\MainWindowViewModel.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAfAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-25T09:47:50.549Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\View\\Windows\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "View\\Windows\\MainWindow.xaml",
+              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\View\\Windows\\MainWindow.xaml",
+              "RelativeToolTip": "View\\Windows\\MainWindow.xaml",
+              "ViewState": "AQIAABUAAAAAAAAAAAAAAAAAAAAHAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-06-26T07:09:55.598Z",
               "EditorCaption": ""
             }
           ]

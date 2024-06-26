@@ -2,13 +2,11 @@ D:\Project\VFM\VFMDesctop\bin\Debug\VFMDesctop.exe.config
 D:\Project\VFM\VFMDesctop\bin\Debug\VFMDesctop.exe
 D:\Project\VFM\VFMDesctop\bin\Debug\VFMDesctop.pdb
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.csproj.AssemblyReference.cache
-D:\Project\VFM\VFMDesctop\obj\Debug\View\Pages\MainPage.g.cs
 D:\Project\VFM\VFMDesctop\obj\Debug\View\Windows\AuthorizationWindow.g.cs
 D:\Project\VFM\VFMDesctop\obj\Debug\View\Windows\MainWindow.g.cs
 D:\Project\VFM\VFMDesctop\obj\Debug\App.g.cs
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop_MarkupCompile.cache
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop_MarkupCompile.lref
-D:\Project\VFM\VFMDesctop\obj\Debug\View\Pages\MainPage.baml
 D:\Project\VFM\VFMDesctop\obj\Debug\View\Windows\AuthorizationWindow.baml
 D:\Project\VFM\VFMDesctop\obj\Debug\View\Windows\MainWindow.baml
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.g.resources
@@ -17,5 +15,6 @@ D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.csproj.GenerateResource.cache
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.csproj.CoreCompileInputs.cache
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.exe
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.pdb
-D:\Project\VFM\VFMDesctop\obj\Debug\View\Pages\ProfilePage.g.cs
-D:\Project\VFM\VFMDesctop\obj\Debug\View\Pages\ProfilePage.baml
+D:\Project\VFM\VFMDesctop\bin\Debug\Newtonsoft.Json.dll
+D:\Project\VFM\VFMDesctop\bin\Debug\Newtonsoft.Json.xml
+D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.csproj.Up2Date

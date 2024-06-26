@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Windows.Controls;
-using VFMDesctop.View.Pages;
 using VFMDesctop.ViewModels.Help;
 using System.Windows.Media;
 
@@ -19,7 +18,6 @@ namespace VFMDesctop.ViewModels.Windows
             exitButton_mouseClick = new BindableCommand(_ => GoToProfile());
 
             _isEnabledButtonMainPage = true;
-            sourceFrame = new Uri("/View/Pages/MainPage.xaml", UriKind.Relative);
         }
 
         private void GoToHome() => sourceFrame = new Uri("/View/Pages/MainPage.xaml", UriKind.Relative);
