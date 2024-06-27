@@ -18,3 +18,6 @@ D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.pdb
 D:\Project\VFM\VFMDesctop\bin\Debug\Newtonsoft.Json.dll
 D:\Project\VFM\VFMDesctop\bin\Debug\Newtonsoft.Json.xml
 D:\Project\VFM\VFMDesctop\obj\Debug\VFMDesctop.csproj.Up2Date
+D:\Project\VFM\VFMDesctop\bin\Debug\Microsoft.Xaml.Behaviors.dll
+D:\Project\VFM\VFMDesctop\bin\Debug\Microsoft.Xaml.Behaviors.pdb
+D:\Project\VFM\VFMDesctop\bin\Debug\Microsoft.Xaml.Behaviors.xml
