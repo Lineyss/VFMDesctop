@@ -76,10 +76,7 @@ namespace VFMDesctop.ViewModels
             await clientWebSocketService.Disconnect(cancellationToken);
         }
 
-        private void _ExitButton_Click()
-        {
-            OnWindowClose?.Invoke();
-        }
+        private void _ExitButton_Click() => OnWindowClose?.Invoke();
 
         private async Task _ConnectButton_Click()
         {
@@ -97,10 +94,7 @@ namespace VFMDesctop.ViewModels
         #endregion
 
         #region [ Не MVVM методы ]
-        private void ClientWebSocketService_OnStatusChange(WebSocketState status)
-        {
-            UpdateStatus(status);
-        }
+        private void ClientWebSocketService_OnStatusChange(WebSocketState status) => UpdateStatus(status);
 
         private void UpdateStatus(WebSocketState status)
         {
@@ -115,7 +109,7 @@ namespace VFMDesctop.ViewModels
                     ButtonConnect_Background = ConnectButton_Background_WebSocketClosed;
                     ConnectionStatus_Text = "Off";
                     break;
-                case WebSocketState.Connecting:
+                default:
                     ButtonConnect_Background = ConnectButton_Background_WebSocketLoading;
                     ConnectionStatus_Text = "Loading";
                     break;
