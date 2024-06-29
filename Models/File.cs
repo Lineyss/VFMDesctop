@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using VFMDesctop.Models.Help;
 
 namespace VFMDesctop.Models
@@ -13,10 +14,11 @@ namespace VFMDesctop.Models
 
         public override (bool, string) Create()
         {
-            if (System.IO.File.Exists(path)) return (false, "Ошибка: Такой файл уже существует");
+            if (IsExist()) return (false, "Ошибка: Такой файл/директория уже существует");
+
             try
             {
-                System.IO.File.Create(path);
+                System.IO.File.Create(Path);
                 return (true, "");
             }
             catch(Exception e)
@@ -27,11 +29,11 @@ namespace VFMDesctop.Models
 
         public override (bool, string) Delete()
         {
-            if (!System.IO.File.Exists(path)) return (false, "Ошибка: Такого файла не существует");
+            if (!System.IO.File.Exists(Path)) return (false, "Ошибка: Такого файла не существует");
 
             try
             {
-                System.IO.File.Delete(path);
+                System.IO.File.Delete(Path);
                 return (true, "");
             }
             catch(Exception e)
@@ -40,10 +42,7 @@ namespace VFMDesctop.Models
             }
         }
 
-        public override (AFileSystemElement, string) Get()
-        {
-            throw new NotImplementedException();
-        }
+        public override (AFileSystemElement, string) Get() => (this, "");
 
         public override (T, string) Open<T>()
         {
@@ -52,17 +51,17 @@ namespace VFMDesctop.Models
 
         public override (bool, string) Update(string Name)
         {
-            if (!System.IO.File.Exists(path)) return (false, "Ошибка: Такого файла не существует");
+            if (!System.IO.File.Exists(Path)) return (false, "Ошибка: Такого файла не существует");
 
-            string[] newFilePathArray = path.Split('/');
+            string[] newFilePathArray = Path.Split('/');
             newFilePathArray[newFilePathArray.Length - 1] = Name;
             string newFilePath = string.Join("/", newFilePathArray);
 
-            if (!System.IO.File.Exists(newFilePath)) return (false, "Ошибка: Такой файл уже существует");
+            if (!IsExist()) return (false, "Ошибка: Такой файл/директория уже существует");
 
             try
             {
-                System.IO.File.Copy(path, newFilePath);
+                System.IO.File.Move(Path, newFilePath);
                 return (true, "");
             }
             catch(Exception e)
@@ -73,7 +72,7 @@ namespace VFMDesctop.Models
 
         protected override double GetSize()
         {
-            return new FileInfo(path).Length;
+            return new FileInfo(Path).Length;
         }
     }
 }

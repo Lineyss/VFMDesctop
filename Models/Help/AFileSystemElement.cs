@@ -1,17 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
 namespace VFMDesctop.Models.Help
 {
     internal abstract class AFileSystemElement : IFileSystemElement
     {
-        protected readonly string path;
+        public string FileName { get; set; }
+        public string Path { get; set; }
+        public bool IsFile { get; set; }
+        public double Size { get; set; }   
+
         public AFileSystemElement(string path)
         {
-            this.path = path;
+            Path = path;
+            FileName = System.IO.Path.GetFileName(path);
+            IsFile = false;
+            Size = GetSize();
         }
 
         public abstract (AFileSystemElement, string) Get();
@@ -20,5 +23,7 @@ namespace VFMDesctop.Models.Help
         public abstract (bool, string) Update(string Name);
         public abstract (bool, string) Create();
         protected abstract double GetSize();
+        protected bool IsExist() => System.IO.File.Exists(Path) || System.IO.Directory.Exists(Path);
+        protected bool IsExist(string newPath) => System.IO.File.Exists(newPath) || System.IO.Directory.Exists(newPath);
     }
 }
