@@ -8,9 +8,12 @@ using VFMDesctop.Models.Help;
 
 namespace VFMDesctop.Models
 {
-    internal class Folder : AFileSystemElement
+    internal class Folder : AFileSystemElement<string[]>
     {
-        public Folder(string path) : base(path) { }
+        public Folder(string path) : base(path) 
+        {
+            IsFile = false;
+        }
 
         public override (bool, string) Create()
         {
@@ -18,7 +21,7 @@ namespace VFMDesctop.Models
 
             try
             {
-                Directory.CreateDirectory(Path);
+                Directory.CreateDirectory(this.Path);
                 return (true, "");
             }
             catch (Exception e)
@@ -29,11 +32,11 @@ namespace VFMDesctop.Models
 
         public override (bool, string) Delete()
         {
-            if (Directory.Exists(Path)) return (false, "Ошибка: Такая директория уже существет");
+            if (Directory.Exists(this.Path)) return (false, "Ошибка: Такая директория уже существет");
 
             try
             {
-                Directory.Delete(Path);
+                Directory.Delete(this.Path);
                 return (false, "");
             }
             catch (Exception e)
@@ -42,22 +45,30 @@ namespace VFMDesctop.Models
             }
         }
 
-        public override (AFileSystemElement, string) Get()
-        {
-            IsFile = false;
-            return (this, "");
-        }
+        public override (AFileSystemElement<string[]>, string) Get() => (this, "");
 
-        public override (T, string) Open<T>()
+        public override (string[], string) Open()
         {
-            throw new NotImplementedException();
+            try
+            {
+                if (!Directory.Exists(this.Path)) return (null, "Ошибка: Такая директория не существует");
+
+                string[] files = Directory.GetFiles(this.Path);
+                string[] directories = Directory.GetDirectories(this.Path);
+
+                return (files.Concat(directories).ToArray() , "");
+            }
+            catch(Exception e)
+            {
+                return (null, e.Message);
+            }
         }
 
         public override (bool, string) Update(string Name)
         {
-            if (!Directory.Exists(Path)) return (false, "Ошибка: Такая директория не существует");
+            if (!Directory.Exists(this.Path)) return (false, "Ошибка: Такая директория не существует");
 
-            string[] newDirectoryPathArray = Path.Split('/');
+            string[] newDirectoryPathArray = this.Path.Split('/');
             newDirectoryPathArray[newDirectoryPathArray.Length - 1] = Name;
             string newDirectoryPath = string.Join("/", newDirectoryPathArray);
 
@@ -65,7 +76,7 @@ namespace VFMDesctop.Models
 
             try
             {
-                Directory.Move(Path, newDirectoryPath);
+                Directory.Move(this.Path, newDirectoryPath);
                 return (true, "");
             }
             catch(Exception e)
@@ -76,8 +87,8 @@ namespace VFMDesctop.Models
 
         protected override double GetSize()
         {
-            string[] files = Directory.GetFiles(Path);
-            string[] directories = Directory.GetDirectories(Path);
+            string[] files = Directory.GetFiles(this.Path);
+            string[] directories = Directory.GetDirectories(this.Path);
 
             double totalSize = 0;
 

@@ -6,7 +6,7 @@ using VFMDesctop.Models.Help;
 
 namespace VFMDesctop.Models
 {
-    internal class File : AFileSystemElement
+    internal class File : AFileSystemElement<object>
     {
         public File(string path) : base(path)
         {
@@ -18,7 +18,7 @@ namespace VFMDesctop.Models
 
             try
             {
-                System.IO.File.Create(Path);
+                System.IO.File.Create(this.Path);
                 return (true, "");
             }
             catch(Exception e)
@@ -29,11 +29,11 @@ namespace VFMDesctop.Models
 
         public override (bool, string) Delete()
         {
-            if (!System.IO.File.Exists(Path)) return (false, "Ошибка: Такого файла не существует");
+            if (!System.IO.File.Exists(this.Path)) return (false, "Ошибка: Такого файла не существует");
 
             try
             {
-                System.IO.File.Delete(Path);
+                System.IO.File.Delete(this.Path);
                 return (true, "");
             }
             catch(Exception e)
@@ -42,18 +42,19 @@ namespace VFMDesctop.Models
             }
         }
 
-        public override (AFileSystemElement, string) Get() => (this, "");
+        public override (AFileSystemElement<object>, string) Get() => (this, "");
 
-        public override (T, string) Open<T>()
+        public override (object, string) Open()
         {
+            if (!System.IO.File.Exists(this.Path)) return (null, "Ошибка: Такого файла не существует");
             throw new NotImplementedException();
         }
 
         public override (bool, string) Update(string Name)
         {
-            if (!System.IO.File.Exists(Path)) return (false, "Ошибка: Такого файла не существует");
+            if (!System.IO.File.Exists(this.Path)) return (false, "Ошибка: Такого файла не существует");
 
-            string[] newFilePathArray = Path.Split('/');
+            string[] newFilePathArray = this.Path.Split('/');
             newFilePathArray[newFilePathArray.Length - 1] = Name;
             string newFilePath = string.Join("/", newFilePathArray);
 
@@ -61,7 +62,7 @@ namespace VFMDesctop.Models
 
             try
             {
-                System.IO.File.Move(Path, newFilePath);
+                System.IO.File.Move(this.Path, newFilePath);
                 return (true, "");
             }
             catch(Exception e)
@@ -72,7 +73,7 @@ namespace VFMDesctop.Models
 
         protected override double GetSize()
         {
-            return new FileInfo(Path).Length;
+            return new FileInfo(this.Path).Length;
         }
     }
 }

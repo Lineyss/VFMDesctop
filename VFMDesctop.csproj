@@ -61,11 +61,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Drive.cs" />
     <Compile Include="Models\File.cs" />
     <Compile Include="Models\Folder.cs" />
     <Compile Include="Models\Help\AFileSystemElement.cs" />
-    <Compile Include="Models\Help\IFileSystemElement.cs" />
-    <Compile Include="Models\JWT.cs" />
     <Compile Include="Models\Services\ClientWebSocketService.cs" />
     <Compile Include="Models\Services\FileSystemService.cs" />
     <Compile Include="Models\User.cs" />

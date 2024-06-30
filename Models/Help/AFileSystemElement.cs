@@ -2,7 +2,7 @@
 
 namespace VFMDesctop.Models.Help
 {
-    internal abstract class AFileSystemElement : IFileSystemElement
+    internal abstract class AFileSystemElement<ReturnOpenMethodValue>
     {
         public string FileName { get; set; }
         public string Path { get; set; }
@@ -17,8 +17,8 @@ namespace VFMDesctop.Models.Help
             Size = GetSize();
         }
 
-        public abstract (AFileSystemElement, string) Get();
-        public abstract (T, string) Open<T>();
+        public abstract (AFileSystemElement<ReturnOpenMethodValue>, string) Get();
+        public abstract (ReturnOpenMethodValue, string) Open();
         public abstract (bool, string) Delete();
         public abstract (bool, string) Update(string Name);
         public abstract (bool, string) Create();
