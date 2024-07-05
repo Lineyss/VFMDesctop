@@ -1,39 +1,49 @@
 ﻿using System;
+using System.Collections;
 using System.IO;
 using System.Linq;
+using System.Runtime.Serialization.Formatters.Binary;
 using System.Threading.Tasks;
-using VFMDesctop.Models.Help;
+using VFMDesctop.Models.AbsctactModels;
+using VFMDesctop.Models.ResponceModels;
 
 namespace VFMDesctop.Models
 {
-    internal class File : AFileSystemElement<object>
+    internal class File : AFileSystemElement
     {
         public File(string path) : base(path)
         {
         }
 
-        public override (bool, string) Create()
+        public override (ResponceFileSystemElement, string) Create()
         {
-            if (IsExist()) return (false, "Ошибка: Такой файл/директория уже существует");
+            if (IsExist()) return (null, "Ошибка: Такой файл/директория уже существует");
 
             try
             {
-                System.IO.File.Create(this.Path);
-                return (true, "");
+                FileStream file = System.IO.File.Create(_Path);
+                file.Close();
+                return (new ResponceFileSystemElement
+                {
+                    Name = file.Name,
+                    Path = _Path,
+                    Type = nameof(System.IO.File),
+                    Size = file.Length,
+                }, "");
             }
             catch(Exception e)
             {
-                return (false, e.Message);
+                return (null, e.Message);
             }
         }
 
         public override (bool, string) Delete()
         {
-            if (!System.IO.File.Exists(this.Path)) return (false, "Ошибка: Такого файла не существует");
+            if (!System.IO.File.Exists(_Path)) return (false, "Ошибка: Такого файла не существует");
 
             try
             {
-                System.IO.File.Delete(this.Path);
+                System.IO.File.Delete(_Path);
                 return (true, "");
             }
             catch(Exception e)
@@ -42,38 +52,63 @@ namespace VFMDesctop.Models
             }
         }
 
-        public override (AFileSystemElement<object>, string) Get() => (this, "");
-
-        public override (object, string) Open()
+        public override (ResponceFileSystemElement, string) Open()
         {
-            if (!System.IO.File.Exists(this.Path)) return (null, "Ошибка: Такого файла не существует");
-            throw new NotImplementedException();
+            if (!System.IO.File.Exists(_Path)) return (null, "Ошибка: Такого файла не существует");
+
+            try
+            {
+                byte[] bytes = System.IO.File.ReadAllBytes(_Path);
+
+                using (MemoryStream memStream = new MemoryStream(bytes))
+                {
+                    BinaryFormatter binaryFormatter = new BinaryFormatter();
+
+                    object obj = binaryFormatter.Deserialize(memStream);
+
+                    return (new ResponceFileSystemElement
+                    {
+                        Data = obj,
+                        Path = _Path,
+                        Name = Path.GetFileName(_Path),
+                        Type = nameof(File),
+                        Size = GetSize()
+                    }, "");
+                }
+            }
+            catch(Exception e)
+            {
+                return (null, e.Message);
+            }
         }
-
-        public override (bool, string) Update(string Name)
+        
+        public override (ResponceFileSystemElement, string) Update(string Name)
         {
-            if (!System.IO.File.Exists(this.Path)) return (false, "Ошибка: Такого файла не существует");
+            if (!System.IO.File.Exists(_Path)) return (null, "Ошибка: Такого файла не существует");
 
-            string[] newFilePathArray = this.Path.Split('/');
+            string[] newFilePathArray = _Path.Split('/');
             newFilePathArray[newFilePathArray.Length - 1] = Name;
             string newFilePath = string.Join("/", newFilePathArray);
 
-            if (!IsExist()) return (false, "Ошибка: Такой файл/директория уже существует");
+            if (!IsExist()) return (null, "Ошибка: Такой файл/директория уже существует");
 
             try
             {
-                System.IO.File.Move(this.Path, newFilePath);
-                return (true, "");
+                System.IO.File.Move(_Path, newFilePath);
+                return (new ResponceFileSystemElement
+                {
+                    Name = Path.GetDirectoryName(newFilePath),
+                    Path = newFilePath,
+                    Size = Folder.GetSize(newFilePath),
+                    Type = nameof(Folder),
+                    Data = null
+                }, "");
             }
             catch(Exception e)
             {
-                return (false, e.Message);
+                return (null, e.Message);
             }
         }
-
-        protected override double GetSize()
-        {
-            return new FileInfo(this.Path).Length;
-        }
+        protected override double GetSize() => new FileInfo(_Path).Length;
     }
 }
