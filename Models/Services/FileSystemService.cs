@@ -1,27 +1,37 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using VFMDesctop.Models.Interfaces;
+﻿using VFMDesctop.Models.Interfaces;
 using VFMDesctop.Models.ResponceModels;
 
 namespace VFMDesctop.Models.Services
 {
-    internal class FileSystemService
+    internal class FileSystemService : IFileSystemService
     {
-        private readonly IFileSystemElement fileSystemElement;
-        public FileSystemService(string path) => fileSystemElement = getFilSystemElement(path);
+        private IFileSystemElement FileSystemElement { get; set; }
 
-        public (ResponceFileSystemElement, string) Open() => fileSystemElement.Open();
-        public (ResponceFileSystemElement, string) Delete() => fileSystemElement.Open();
-        public (ResponceFileSystemElement, string) Update() => fileSystemElement.Open();
-        public (ResponceFileSystemElement, string) Create() => fileSystemElement.Open();
+        public (ResponceFileSystemElement, string) Open(string path)
+        {
+            FileSystemElement = getFilSystemElement(path);
+            return FileSystemElement.Open();
+        }
+        public (ResponceFileSystemElement, string) Delete(string path)
+        {
+            FileSystemElement = getFilSystemElement(path);
+            return FileSystemElement.Open();
+        }
+        public (ResponceFileSystemElement, string) Update(string path)
+        {
+            FileSystemElement = getFilSystemElement(path);
+            return FileSystemElement.Open();
+        }
+        public (ResponceFileSystemElement, string) Create(string path)
+        {
+            FileSystemElement = getFilSystemElement(path);
+            return FileSystemElement.Open();
+        }
 
-        public static IFileSystemElement getFilSystemElement(string path)
+        protected IFileSystemElement getFilSystemElement(string path)
         {
             if (System.IO.File.Exists(path)) return new File(path);
-            else if(System.IO.Directory.Exists(path)) return new Folder(path);
+            else if (System.IO.Directory.Exists(path)) return new Folder(path);
             return new Drive(path);
         }
     }

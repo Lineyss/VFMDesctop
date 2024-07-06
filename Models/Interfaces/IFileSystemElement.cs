@@ -2,11 +2,11 @@
 
 namespace VFMDesctop.Models.Interfaces
 {
-    internal interface IFileSystemElement
+    internal interface IFileSystemElement<FileSystemElement>
     {
-        (ResponceFileSystemElement, string) Create();
-        (bool, string) Delete();
-        (ResponceFileSystemElement, string) Open();
-        (ResponceFileSystemElement, string) Update(string Name);
+        (FileSystemElement FileSystemElement, string Error) Create(string path);
+        (bool IsDeleted, string Error) Delete(string path);
+        (FileSystemElement FileSystemElement, string Error) Open(string path);
+        (FileSystemElement FileSystemElement, string Error) Update(string Name, string path);
     }
 }

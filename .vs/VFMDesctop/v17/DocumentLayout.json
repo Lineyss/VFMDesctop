@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "D:\\project\\VFM\\VFMDesctop\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\repository\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\repository\\filerepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\view\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:view\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\repository\\folderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\repository\\folderrepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\view\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:view\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\repository\\driverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\repository\\driverepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,9 +21,48 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 352,
-          "SelectedChildIndex": -1,
+          "DockedWidth": 355,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "DriveRepository.cs",
+              "DocumentMoniker": "D:\\project\\VFM\\VFMDesctop\\Models\\Repository\\DriveRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repository\\DriveRepository.cs",
+              "ToolTip": "D:\\project\\VFM\\VFMDesctop\\Models\\Repository\\DriveRepository.cs",
+              "RelativeToolTip": "Models\\Repository\\DriveRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T13:55:38.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FolderRepository.cs",
+              "DocumentMoniker": "D:\\project\\VFM\\VFMDesctop\\Models\\Repository\\FolderRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repository\\FolderRepository.cs",
+              "ToolTip": "D:\\project\\VFM\\VFMDesctop\\Models\\Repository\\FolderRepository.cs",
+              "RelativeToolTip": "Models\\Repository\\FolderRepository.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwEYAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T13:55:37.389Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "FileRepository.cs",
+              "DocumentMoniker": "D:\\project\\VFM\\VFMDesctop\\Models\\Repository\\FileRepository.cs",
+              "RelativeDocumentMoniker": "Models\\Repository\\FileRepository.cs",
+              "ToolTip": "D:\\project\\VFM\\VFMDesctop\\Models\\Repository\\FileRepository.cs",
+              "RelativeToolTip": "Models\\Repository\\FileRepository.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAEoAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-06T13:54:25.621Z",
+              "EditorCaption": ""
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
@@ -76,7 +115,7 @@
         },
         {
           "DockedWidth": 59,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -85,44 +124,6 @@
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPageViewModel.cs",
-              "DocumentMoniker": "D:\\project\\VFM\\VFMDesctop\\ViewModels\\Pages\\MainPageViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\MainPageViewModel.cs",
-              "ToolTip": "D:\\project\\VFM\\VFMDesctop\\ViewModels\\Pages\\MainPageViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\MainPageViewModel.cs",
-              "ViewState": "AQIAADsAAAAAAAAAAADwv0IAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T10:19:47.397Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "D:\\project\\VFM\\VFMDesctop\\View\\Pages\\MainPage.xaml",
-              "RelativeDocumentMoniker": "View\\Pages\\MainPage.xaml",
-              "ToolTip": "D:\\project\\VFM\\VFMDesctop\\View\\Pages\\MainPage.xaml",
-              "RelativeToolTip": "View\\Pages\\MainPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-07-06T10:19:45.582Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "D:\\project\\VFM\\VFMDesctop\\View\\Pages\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "View\\Pages\\MainPage.xaml.cs",
-              "ToolTip": "D:\\project\\VFM\\VFMDesctop\\View\\Pages\\MainPage.xaml.cs",
-              "RelativeToolTip": "View\\Pages\\MainPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAMAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-06T09:20:24.754Z",
-              "EditorCaption": ""
             }
           ]
         }

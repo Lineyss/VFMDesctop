@@ -176,19 +176,20 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Events\NavigationCommand.cs" />
+    <Compile Include="Events\StatusChangeEventHendler.cs" />
     <Compile Include="Models\AbsctactModels\AFactory.cs" />
     <Compile Include="Models\Interfaces\IFactory.cs" />
     <Compile Include="Models\Interfaces\IFileSystemElement.cs" />
-    <Compile Include="Models\Drive.cs" />
-    <Compile Include="Models\File.cs" />
-    <Compile Include="Models\Folder.cs" />
-    <Compile Include="Models\AbsctactModels\AFileSystemElement.cs" />
     <Compile Include="Models\Interfaces\INavigationService.cs" />
     <Compile Include="Models\ReceiveModels\Help\ReceiveStatus.cs" />
     <Compile Include="Models\ReceiveModels\Receive.cs" />
+    <Compile Include="Models\Repository\DriveRepository.cs" />
+    <Compile Include="Models\Repository\FileRepository.cs" />
+    <Compile Include="Models\Repository\FolderRepository.cs" />
     <Compile Include="Models\ResponceModels\ResponceFileSystemElement.cs" />
     <Compile Include="Models\Services\ClientWebSocketService.cs" />
     <Compile Include="Models\Services\FileSystemService.cs" />
+    <Compile Include="Models\Interfaces\IFileSystemService.cs" />
     <Compile Include="Models\Services\JsonConverterServices.cs" />
     <Compile Include="Models\Services\NavigationService.cs" />
     <Compile Include="Models\Services\ServiceExtensions.cs" />
