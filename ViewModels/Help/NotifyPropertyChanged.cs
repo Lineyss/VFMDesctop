@@ -3,7 +3,7 @@ using System.Runtime.CompilerServices;
 
 namespace VFMDesctop.ViewModels.Help
 {
-    class NotifyPropertyChanged : INotifyPropertyChanged
+    public class NotifyPropertyChanged : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

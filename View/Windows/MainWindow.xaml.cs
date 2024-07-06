@@ -1,20 +1,14 @@
-﻿using System.Runtime.Remoting.Contexts;
-using System.Windows;
-using VFMDesctop.ViewModels;
+﻿using System.Windows;
+using VFMDesctop.ViewModels.Windows;
 
 namespace VFMDesctop.View
 {
     public partial class MainWindow : Window
     {
-        public MainWindow()
+        public MainWindow(MainWindowViewModel mainWindow)
         {
             InitializeComponent();
-            MainWindowViewModel mainWindow = new MainWindowViewModel();
             DataContext = mainWindow;
-
-            mainWindow.OnWindowClose += MainWindow_OnWindowClose;
         }
-
-        private void MainWindow_OnWindowClose() => Close();
     }
 }

@@ -3,7 +3,7 @@ using System.Windows.Input;
 
 namespace VFMDesctop.ViewModels.Help
 {
-    class BindableCommand : ICommand
+    public class BindableCommand : ICommand
     {
         private Action<object> _execute;
         private Func<object, bool> _canExecute;
