@@ -51,7 +51,7 @@ namespace VFMDesctop.ViewModels
         private static CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
         private static CancellationToken cancellationToken = cancellationTokenSource.Token;
 
-        private readonly ClientWebSocketService clientWebSocketService;
+        private readonly CWSFileSystemService clientWebSocketService;
 
         private readonly IFactory<AuthorizationPage> factoryAuthPage;
         private readonly INavigationService navigationService;

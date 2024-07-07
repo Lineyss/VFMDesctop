@@ -7,7 +7,7 @@ namespace VFMDesctop.Models.Services
 {
     public class NavigationService : INavigationService
     {
-        public event NavigationCommand NavigationChange;
+        public event NavigationChangeEventHendler NavigationChange;
 
         private Page CurrentPage { get; set; }
         public Page GetNavigate() => CurrentPage;

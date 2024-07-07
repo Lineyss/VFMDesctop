@@ -6,38 +6,38 @@ using VFMDesctop.Models.ResponceModels;
 
 namespace VFMDesctop.Models.Repository
 {
-    internal class FileRepository : IFileSystemElement<FileInfo>
+    internal class FileRepository : IFileSystemRepository
     {
-        public (FileInfo FileSystemElement, string Error) Create(string path)
+        public (ResponceFileSystemElement FileSystemElement, string Error) Create(string path)
         {
-            if (!IsExist(path))
+            if (!IsExist(path) && !Directory.Exists(path))
             {
                 try
                 {
                     FileStream file = File.Create(path);
                     file.Close();
-                    return (new FileInfo(path), "");
+                    return (ConvertToResponceFileSystemElement(new FileInfo(path)), string.Empty);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     return (null, e.Message);
                 }
             }
 
-            return (null, "Ошибка: Такой файл уже существует");
+            return (null, "Ошибка: Такой файл/директория уже существует");
         }
 
         public (bool IsDeleted, string Error) Delete(string path)
         {
-            if(IsExist(path))
+            if (IsExist(path))
             {
                 try
                 {
                     File.Delete(path);
 
-                    return (true, "");
+                    return (true, string.Empty);
                 }
-                catch(Exception e)
+                catch (Exception e)
                 {
                     return (false, e.Message);
                 }
@@ -46,12 +46,24 @@ namespace VFMDesctop.Models.Repository
             return (false, "Ошибка: Такой файл не существует");
         }
 
-        public (FileInfo FileSystemElement, string Error) Open(string path)
+        public (ResponceFileSystemElement FileSystemElement, string Error) Open(string path)
         {
-            throw new NotImplementedException();
+            if (IsExist(path))
+            {
+                try
+                {
+                    return (ConvertToResponceFileSystemElement(new FileInfo(path)), string.Empty);
+                }
+                catch (Exception e)
+                {
+                    return (null, e.Message);
+                }
+            }
+
+            return (null, "Ошибка: Такой файл не существует");
         }
 
-        public (FileInfo FileSystemElement, string Error) Update(string Name, string path)
+        public (ResponceFileSystemElement FileSystemElement, string Error) Update(string Name, string path)
         {
             if (IsExist(path))
             {
@@ -61,14 +73,14 @@ namespace VFMDesctop.Models.Repository
                     arrayOldPath[arrayOldPath.Length - 1] = path;
                     string newPath = string.Join("\\", arrayOldPath);
 
-                    if (!IsExist(newPath))
+                    if (!IsExist(newPath) && !Directory.Exists(path))
                     {
                         File.Move(path, newPath);
 
-                        return (new FileInfo(newPath), "");
+                        return (ConvertToResponceFileSystemElement(new FileInfo(newPath)), string.Empty);
                     }
 
-                    return (null, "Ошибка: Файл с таким названием уже существует");
+                    return (null, "Ошибка: Файл/директория с таким названием уже существует");
                 }
                 catch (Exception e)
                 {
@@ -80,5 +92,14 @@ namespace VFMDesctop.Models.Repository
         }
 
         private bool IsExist(string path) => File.Exists(path);
+        private ResponceFileSystemElement ConvertToResponceFileSystemElement(FileInfo file,
+            object data=null) => new ResponceFileSystemElement
+            {
+                Data = data,
+                Path = file.FullName,
+                Name = file.Name,
+                Type = nameof(File),
+                Size = file.Length
+            };
     }
 }

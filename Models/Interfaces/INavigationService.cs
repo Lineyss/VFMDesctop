@@ -5,7 +5,7 @@ namespace VFMDesctop.Models.Interfaces
 {
     public interface INavigationService
     {
-        event NavigationCommand NavigationChange;
+        event NavigationChangeEventHendler NavigationChange;
         void SetNavigate(Page Page);
         Page GetNavigate();
     }

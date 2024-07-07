@@ -7,6 +7,6 @@ namespace VFMDesctop.Models.Interfaces
         (ResponceFileSystemElement, string) Create(string path);
         (ResponceFileSystemElement, string) Delete(string path);
         (ResponceFileSystemElement, string) Open(string path);
-        (ResponceFileSystemElement, string) Update(string path);
+        (ResponceFileSystemElement, string) Update(string name, string path);
     }
 }

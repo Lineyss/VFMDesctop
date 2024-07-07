@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Hosting; 
 using System.Windows;
 using VFMDesctop.Models.Interfaces;
+using VFMDesctop.Models.Repository;
 using VFMDesctop.Models.Services;
 using VFMDesctop.View;
 using VFMDesctop.View.Pages;
@@ -44,6 +45,11 @@ namespace VFMDesctop
 
             #region [ Services ]
             services.AddSingleton<INavigationService, NavigationService>();
+
+            services.AddTransient<IFileSystemRepository, FileRepository>();
+            services.AddTransient<IFileSystemRepository, FolderRepository>();
+
+            services.AddTransient<IWebSocketService, CWSFileSystemService>();
             #endregion
         }
 
