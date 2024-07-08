@@ -182,10 +182,10 @@
     <Compile Include="Models\Interfaces\IFactory.cs" />
     <Compile Include="Models\Interfaces\IFileSystemRepository.cs" />
     <Compile Include="Models\Interfaces\INavigationService.cs" />
-    <Compile Include="Models\ReceiveModels\Help\ReceiveStatus.cs" />
     <Compile Include="Models\ReceiveModels\Receive.cs" />
     <Compile Include="Models\Repository\FileRepository.cs" />
     <Compile Include="Models\Repository\FolderRepository.cs" />
+    <Compile Include="Models\ResponceModels\Responce.cs" />
     <Compile Include="Models\ResponceModels\ResponceFileSystemElement.cs" />
     <Compile Include="Models\Services\CWSFileSystemService.cs" />
     <Compile Include="Models\Services\FileSystemService.cs" />

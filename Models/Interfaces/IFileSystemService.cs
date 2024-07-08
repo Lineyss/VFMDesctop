@@ -2,7 +2,7 @@
 
 namespace VFMDesctop.Models.Interfaces
 {
-    internal interface IFileSystemService
+    public interface IFileSystemService
     {
         (ResponceFileSystemElement, string) Create(string path);
         (ResponceFileSystemElement, string) Delete(string path);

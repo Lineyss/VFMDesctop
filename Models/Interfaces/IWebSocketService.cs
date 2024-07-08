@@ -9,7 +9,7 @@ using VFMDesctop.Models.ReceiveModels;
 
 namespace VFMDesctop.Models.Interfaces
 {
-    internal interface IWebSocketService
+    public interface IWebSocketService
     {
         event WebSocketStatusChangeEventHendler StatusChanged;
         Task Connect();

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Windows.Controls;
-using VFMDesctop.ViewModels.Help;
+﻿using VFMDesctop.ViewModels.Help;
 using System.Windows.Media;
 using System.Net.WebSockets;
 using VFMDesctop.Models.Services;
@@ -8,6 +6,8 @@ using System.Threading.Tasks;
 using System.Threading;
 using VFMDesctop.Models.Interfaces;
 using VFMDesctop.View.Pages;
+using VFMDesctop.Models.ReceiveModels;
+using VFMDesctop.Models.ResponceModels;
 
 namespace VFMDesctop.ViewModels
 {
@@ -44,68 +44,130 @@ namespace VFMDesctop.ViewModels
         #endregion
 
         #region [ Не MVVM свойста ]
+        private readonly CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
+
         private readonly SolidColorBrush ConnectButton_Background_WebSocketConnecting = new SolidColorBrush(Colors.Green);
         private readonly SolidColorBrush ConnectButton_Background_WebSocketLoading = new SolidColorBrush(Colors.Gray);
         private readonly SolidColorBrush ConnectButton_Background_WebSocketClosed = new SolidColorBrush(Colors.Red);
 
-        private static CancellationTokenSource cancellationTokenSource = new CancellationTokenSource();
-        private static CancellationToken cancellationToken = cancellationTokenSource.Token;
-
-        private readonly CWSFileSystemService clientWebSocketService;
-
         private readonly IFactory<AuthorizationPage> factoryAuthPage;
         private readonly INavigationService navigationService;
-
+        private readonly IWebSocketService webSocketService;
+        private readonly IFileSystemService fileSystemService;
         #endregion
 
         public MainPageViewModel(INavigationService navigationService,
-                   IFactory<AuthorizationPage> factoryAuthPage)
+                   IFactory<AuthorizationPage> factoryAuthPage,
+                   IFileSystemService fileSystemService,
+                   IWebSocketService webSocketService)
         {
             this.navigationService = navigationService;
             this.factoryAuthPage = factoryAuthPage;
+            this.webSocketService = webSocketService;
+            this.fileSystemService = fileSystemService;
 
-            UpdateStatus(/*clientWebSocketService._ClientWebSocket.State*/);
+            this.webSocketService.StatusChanged += WebSocketService_StatusChanged;
 
             ConnectButton_Click = new BindableCommand(async _ => await _ConnectButton_Click());
             ExitButton_Click = new BindableCommand(_ => _ExitButton_Click());
-            Window_Closed = new BindableCommand(async _ => await _Window_Closed());
+
+            UpdateStatus(webSocketService.GetWebSocketStatus());
         }
 
+        ~MainPageViewModel()
+        {
+            if(webSocketService.GetWebSocketStatus() == WebSocketState.Open)
+                webSocketService.Disconnect();
+        }
+
+        private void WebSocketService_StatusChanged() => UpdateStatus(webSocketService.GetWebSocketStatus());
 
         #region [ MVVM методы]
-        private async Task _Window_Closed()
-        {
-            await clientWebSocketService.Disconnect(cancellationToken);
-        }
 
         private void _ExitButton_Click()
         {
             navigationService.SetNavigate(factoryAuthPage.Create());
+            webSocketService.Disconnect();
         }
 
         private async Task _ConnectButton_Click()
         {
-/*            switch(clientWebSocketService._ClientWebSocket.State)
+            switch (webSocketService.GetWebSocketStatus())
             {
                 case WebSocketState.Open:
-                    await clientWebSocketService.Disconnect(cancellationToken);
+                    await webSocketService.Disconnect();
                     break;
                 case WebSocketState.None:
                 case WebSocketState.Closed:
-                    await clientWebSocketService.Connect(cancellationToken);
+                    await webSocketService.Connect();
                     break;
-            }*/
+            }
         }
         #endregion
 
         #region [ Не MVVM методы ]
-        private void ClientWebSocketService_OnStatusChange(WebSocketState status) => UpdateStatus(/*status*/);
 
-        private void UpdateStatus(/*WebSocketState status*/)
+        private async Task ReceiveMessage(CancellationToken token)
         {
-            ButtonConnect_Background = ConnectButton_Background_WebSocketClosed;
-            ConnectionStatus_Text = "Off";
-            /*switch (status)
+            while(!token.IsCancellationRequested)
+            {
+                try
+                {
+                    string json = await webSocketService.Receive();
+                    Receive receive = JsonConverterServices.Deserialize<Receive>(json);
+                    switch(receive.Action)
+                    {
+                        case("POST"):
+                            var elementsPost = fileSystemService.Create(receive.Path);
+                            await ResponceMessage(new Responce
+                            {
+                                Error = elementsPost.Item2,
+                                fileSystemElement = elementsPost.Item1
+                            });
+                            break;
+                        case("GET"):
+                            var elementsGet = fileSystemService.Open(receive.Path);
+                            await ResponceMessage(new Responce
+                            {
+                                Error = elementsGet.Item2,
+                                fileSystemElement = elementsGet.Item1
+                            });
+                            break;
+                        case ("PUT"):
+                            var elementsPut = fileSystemService.Update(receive.UpdateName ,receive.Path);
+                            await ResponceMessage(new Responce
+                            {
+                                Error = elementsPut.Item2,
+                                fileSystemElement = elementsPut.Item1
+                            });
+                            break;
+                        case ("DELETE"):
+                            var elementsDelete = fileSystemService.Delete(receive.Path);
+                            await ResponceMessage(new Responce
+                            {
+                                Error = elementsDelete.Item2,
+                                fileSystemElement = elementsDelete.Item1
+                            });
+                            break;
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+        }
+
+        private async Task ResponceMessage(Responce responceFileSystemElement)
+        {
+            string jsonMessage = JsonConverterServices.Serialize(responceFileSystemElement);
+
+            await webSocketService.Responce(jsonMessage);
+        }
+
+        private void UpdateStatus(WebSocketState status)
+        {
+            switch (status)
             {
                 case WebSocketState.Open:
                     ButtonConnect_Background = ConnectButton_Background_WebSocketConnecting;
@@ -115,12 +177,13 @@ namespace VFMDesctop.ViewModels
                 case WebSocketState.Closed:
                     ButtonConnect_Background = ConnectButton_Background_WebSocketClosed;
                     ConnectionStatus_Text = "Off";
+                    cancellationTokenSource.Cancel();
                     break;
                 default:
                     ButtonConnect_Background = ConnectButton_Background_WebSocketLoading;
                     ConnectionStatus_Text = "Loading";
                     break;
-            }*/
+            }
         }
         #endregion
     }

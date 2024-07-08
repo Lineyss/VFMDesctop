@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace VFMDesctop.Models.ResponceModels
 {
-    internal class ResponceFileSystemElement
+    public class ResponceFileSystemElement
     {
         public string Name { get; set; }
         public string Path { get; set; }

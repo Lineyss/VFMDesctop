@@ -7,7 +7,7 @@ using VFMDesctop.Models.ResponceModels;
 
 namespace VFMDesctop.Models.Services
 {
-    internal class FileSystemService : IFileSystemService
+    public class FileSystemService : IFileSystemService
     {
         private readonly IEnumerable<IFileSystemRepository> fileSystemRepositories;
 

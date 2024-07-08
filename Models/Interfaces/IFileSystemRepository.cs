@@ -2,7 +2,7 @@
 
 namespace VFMDesctop.Models.Interfaces
 {
-    internal interface IFileSystemRepository
+    public interface IFileSystemRepository
     {
         (ResponceFileSystemElement FileSystemElement, string Error) Create(string path);
         (bool IsDeleted, string Error) Delete(string path);

@@ -17,11 +17,11 @@ using VFMDesctop.Models.ResponceModels;
 
 namespace VFMDesctop.Models.Services
 {
-    internal class CWSFileSystemService : IWebSocketService
+    public class CWSFileSystemService : IWebSocketService
     {
         private CancellationTokenSource cancellationTokenSource;
         private CancellationToken cancellationToken;
-        private Uri WebSocketIp = new Uri("asdadsasd");
+        private Uri WebSocketIp = new Uri("ws://localhost:5285/WebSocket");
         private ClientWebSocket clientWebSocket;
         
         public CWSFileSystemService()
@@ -80,7 +80,7 @@ namespace VFMDesctop.Models.Services
             }
 
             return string.Empty;
-        }
+        } 
 
         public async Task Responce(string message)
         {
