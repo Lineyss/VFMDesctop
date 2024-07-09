@@ -97,3 +97,12 @@ D:\project\VFM\VFMDesctop\bin\Debug\System.Text.Encodings.Web.xml
 D:\project\VFM\VFMDesctop\bin\Debug\System.Text.Json.xml
 D:\project\VFM\VFMDesctop\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\project\VFM\VFMDesctop\bin\Debug\System.ValueTuple.xml
+D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignColors.dll
+D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignThemes.Wpf.dll
+D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignColors.pdb
+D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignThemes.Wpf.pdb
+D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignThemes.Wpf.xml
+D:\project\VFM\VFMDesctop\obj\Debug\App.baml
+D:\project\VFM\VFMDesctop\obj\Debug\View\Components\BindablePasswordBox.g.cs
+D:\project\VFM\VFMDesctop\obj\Debug\GeneratedInternalTypeHelper.g.cs
+D:\project\VFM\VFMDesctop\obj\Debug\View\Components\BindablePasswordBox.baml

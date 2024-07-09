@@ -1,63 +1,16 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\Project\\VFM\\VFMDesctop\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\receivemodels\\receive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\receivemodels\\receive.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\services\\filesystemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\services\\filesystemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\responcemodels\\responcefilesystemelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\responcemodels\\responcefilesystemelement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|d:\\project\\vfm\\vfmdesctop\\models\\responcemodels\\responce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{669052D9-33B9-43CE-8E45-31CC9D9EAB68}|VFMDesctop.csproj|solutionrelative:models\\responcemodels\\responce.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    }
-  ],
+  "WorkspaceRootPath": "D:\\project\\VFM\\VFMDesctop\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 515,
-          "SelectedChildIndex": 16,
+          "DockedWidth": 563,
+          "SelectedChildIndex": -1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "Responce.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\ResponceModels\\Responce.cs",
-              "RelativeDocumentMoniker": "Models\\ResponceModels\\Responce.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\ResponceModels\\Responce.cs",
-              "RelativeToolTip": "Models\\ResponceModels\\Responce.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAnAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T14:37:53.367Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ResponceFileSystemElement.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\ResponceModels\\ResponceFileSystemElement.cs",
-              "RelativeDocumentMoniker": "Models\\ResponceModels\\ResponceFileSystemElement.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\ResponceModels\\ResponceFileSystemElement.cs",
-              "RelativeToolTip": "Models\\ResponceModels\\ResponceFileSystemElement.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAgAAAAqAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T14:37:01.122Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{873151d0-cf2e-48cc-b4bf-ad0394f6a3c3}"
@@ -96,54 +49,15 @@
             },
             {
               "$type": "Bookmark",
+              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
+            },
+            {
+              "$type": "Bookmark",
               "Name": "ST:0:0:{25f7e850-ffa1-11d0-b63f-00a0c922e851}"
             },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{e1b7d1f8-9b3c-49b1-8f4f-bfc63a88835d}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FileSystemService.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\FileSystemService.cs",
-              "RelativeDocumentMoniker": "Models\\Services\\FileSystemService.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\Services\\FileSystemService.cs",
-              "RelativeToolTip": "Models\\Services\\FileSystemService.cs",
-              "ViewState": "AQIAABgAAAAAAAAAAAAowDUAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T14:31:40.319Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Receive.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\Models\\ReceiveModels\\Receive.cs",
-              "RelativeDocumentMoniker": "Models\\ReceiveModels\\Receive.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\Models\\ReceiveModels\\Receive.cs",
-              "RelativeToolTip": "Models\\ReceiveModels\\Receive.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAUAAAA+AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T14:28:31.281Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "MainPageViewModel.cs",
-              "DocumentMoniker": "D:\\Project\\VFM\\VFMDesctop\\ViewModels\\Pages\\MainPageViewModel.cs",
-              "RelativeDocumentMoniker": "ViewModels\\Pages\\MainPageViewModel.cs",
-              "ToolTip": "D:\\Project\\VFM\\VFMDesctop\\ViewModels\\Pages\\MainPageViewModel.cs",
-              "RelativeToolTip": "ViewModels\\Pages\\MainPageViewModel.cs",
-              "ViewState": "AQIAAGsAAAAAAAAAAAAAwHcAAAAlAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-08T08:26:26.596Z",
-              "EditorCaption": ""
             }
           ]
         },

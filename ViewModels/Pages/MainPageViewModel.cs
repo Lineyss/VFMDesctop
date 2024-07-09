@@ -115,6 +115,7 @@ namespace VFMDesctop.ViewModels
                 {
                     string json = await webSocketService.Receive();
                     Receive receive = JsonConverterServices.Deserialize<Receive>(json);
+
                     switch(receive.Action)
                     {
                         case("POST"):

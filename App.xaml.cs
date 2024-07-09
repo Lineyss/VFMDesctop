@@ -32,24 +32,25 @@ namespace VFMDesctop
         private void ConfigureServices(IServiceCollection services)
         {
             #region [ View ]
+            services.AddFormFactory<AuthorizationPage>();
             services.AddSingleton<MainWindow>();
             services.AddFormFactory<MainPage>();
-            services.AddFormFactory<AuthorizationPage>();
             #endregion
 
             #region [ ViewModel ]
+            services.AddTransient<AuthorizationPageViewModel>();
             services.AddTransient<MainWindowViewModel>();
             services.AddTransient<MainPageViewModel>();
-            services.AddTransient<AuthorizationPageViewModel>();
             #endregion
 
             #region [ Services ]
-            services.AddSingleton<INavigationService, NavigationService>();
-
-            services.AddTransient<IFileSystemRepository, FileRepository>();
+            services.AddTransient<IAuthorizationService, AuthorizationService>();
             services.AddTransient<IFileSystemRepository, FolderRepository>();
-
             services.AddTransient<IWebSocketService, CWSFileSystemService>();
+            services.AddSingleton<INavigationService, NavigationService>();
+            services.AddTransient<IFileSystemRepository, FileRepository>();
+            services.AddTransient<IFileSystemService, FileSystemService>();
+            services.AddTransient<IHttpService, HttpService>();
             #endregion
         }
 

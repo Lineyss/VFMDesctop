@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Project\VFM\VFMDesctop\obj\Debug\
+D:\project\VFM\VFMDesctop\obj\Debug\
 VFMDesctop
 none
 false
 DEBUG;TRACE
-D:\Project\VFM\VFMDesctop\App.xaml
-3559670461
+D:\project\VFM\VFMDesctop\App.xaml
+41659134355
 
-322018799958
-157-194790409
-View\Pages\AuthorizationPage.xaml;View\Pages\MainPage.xaml;View\Windows\MainWindow.xaml;
+361163729211
+159526356244
+View\Components\BindablePasswordBox.xaml;View\Pages\AuthorizationPage.xaml;View\Pages\MainPage.xaml;View\Windows\MainWindow.xaml;
 
 False
 
