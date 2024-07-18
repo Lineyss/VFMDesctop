@@ -104,5 +104,7 @@ D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignThemes.Wpf.pdb
 D:\project\VFM\VFMDesctop\bin\Debug\MaterialDesignThemes.Wpf.xml
 D:\project\VFM\VFMDesctop\obj\Debug\App.baml
 D:\project\VFM\VFMDesctop\obj\Debug\View\Components\BindablePasswordBox.g.cs
-D:\project\VFM\VFMDesctop\obj\Debug\GeneratedInternalTypeHelper.g.cs
 D:\project\VFM\VFMDesctop\obj\Debug\View\Components\BindablePasswordBox.baml
+D:\project\VFM\VFMDesctop\obj\Debug\Themes\DarkTheme.baml
+D:\project\VFM\VFMDesctop\obj\Debug\Themes\LigthTheme.baml
+D:\project\VFM\VFMDesctop\obj\Debug\GeneratedInternalTypeHelper.g.cs

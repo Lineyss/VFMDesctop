@@ -38,7 +38,7 @@ namespace VFMDesctop.ViewModels
         }
 
         public BindableCommand ConnectButton_Click { get; set; }
-        public BindableCommand ExitButton_Click { get; set; }
+        public BindableCommand ExitClick { get; set; }
         public BindableCommand Window_Closed { get; set; }
 
         #endregion
@@ -69,7 +69,7 @@ namespace VFMDesctop.ViewModels
             this.webSocketService.StatusChanged += WebSocketService_StatusChanged;
 
             ConnectButton_Click = new BindableCommand(async _ => await _ConnectButton_Click());
-            ExitButton_Click = new BindableCommand(_ => _ExitButton_Click());
+            ExitClick = new BindableCommand(_ => Exit());
 
             UpdateStatus(webSocketService.GetWebSocketStatus());
         }
@@ -84,7 +84,7 @@ namespace VFMDesctop.ViewModels
 
         #region [ MVVM методы]
 
-        private void _ExitButton_Click()
+        private void Exit()
         {
             navigationService.SetNavigate(factoryAuthPage.Create());
             webSocketService.Disconnect();

@@ -6,9 +6,17 @@
       xmlns:local="clr-namespace:VFMDesctop.View.Pages"
       xmlns:md="http://materialdesigninxaml.net/winfx/xaml/themes" 
       xmlns:components="clr-namespace:VFMDesctop.View.Components"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       mc:Ignorable="d"
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AuthorizationPage">
+
+    <Page.Resources>
+        <Style TargetType="components:BindablePasswordBox" x:Key="CustomPasswordBoxStyle">
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="BorderBrush" Value="Black"/>
+        </Style>
+    </Page.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
@@ -16,38 +24,126 @@
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
             <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
 
-        <Label Content="Авторизация" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="36" />
+        <Label Content="Авторизация" 
+               HorizontalAlignment="Center" 
+               VerticalAlignment="Center" 
+               FontSize="24"
+               Foreground="{DynamicResource ForegroundColor}"/>
 
-        <TextBox Grid.Row="1" 
-                 Name="Login" 
-                 HorizontalAlignment="Center" 
+        <TextBox Grid.Row="2"
+                 Width="186"
+                 Height="28"
+                 Foreground="{DynamicResource ForegroundColor}"
+                 materialDesign:HintAssist.HelperText="Ошибка: ошибка ошибок"
+                 materialDesign:HintAssist.Hint="Почта"
+                 MaxLength="30"
+                 FontSize="15" 
+                 Padding="5, 0, 5, 0"
                  VerticalAlignment="Center" 
-                 Height="38" 
-                 Width="216"
-                 Text="{Binding LoginText, Mode=TwoWay}"
-                 md:HintAssist.Hint="Логин"
-                 md:HintAssist.HelperText="{Binding LoginHelperText}"/>
+                 HorizontalAlignment="Center" 
+                 BorderBrush="{DynamicResource BorderBrushColor}"
+                 BorderThickness="1" />
 
-        <components:BindablePasswordBox Grid.Row="2" 
-                                        HorizontalAlignment="Center" 
-                                        VerticalAlignment="Center"
-                                        Width="216" 
-                                        Height="38"
-                                        Password="{Binding PasswordPassword, Mode=TwoWay}"
-                                        md:HintAssist.HelperText="{Binding PasswordHelperText}"
-                                        md:HintAssist.Hint="Пароль"/>
+        <PasswordBox Grid.Row="3"
+                     Width="186"
+                     Height="28"
+                     Style="{StaticResource MaterialDesignRevealPasswordBox}"
+                     MaxLength="30"
+                     Foreground="{DynamicResource ForegroundColor}"
+                     materialDesign:HintAssist.HelperText="Ошибка: ошибка ошибок"
+                     materialDesign:HintAssist.Hint="Пароль"
+                     FontSize="15"
+                     Padding="5, 0, 5, 0"
+                     VerticalAlignment="Center"
+                     HorizontalAlignment="Center"
+                     BorderBrush="{DynamicResource BorderBrushColor}"
+                     BorderThickness="1"/>
 
-        <Button Content="Войти" 
-                Command="{Binding LoginButton_Click}" 
-                HorizontalAlignment="Center"
-                VerticalAlignment="Center" 
-                FontSize="20"
-                Grid.Row="3" 
-                Height="59" 
-                Width="216"
-                Cursor="Hand"/>
+        <CheckBox Grid.Row="4" 
+                  Foreground="{DynamicResource ForegroundColor}"
+                  HorizontalAlignment="Center" 
+                  VerticalAlignment="Center"
+                  Cursor="Hand"
+                  Background="{DynamicResource BackgroundColorСheckBox}"
+                  Width="186">
+
+            <AccessText Height="20">
+                Запомнить?
+            </AccessText>
+        </CheckBox>
+
+        <Button Name="Login"
+                Grid.Row="5"
+                Width="70"
+                BorderBrush="{DynamicResource BorderBrushColor}"
+                Foreground="{DynamicResource ForegroundColor}"
+                Height="34"
+                Content="Войти"
+                Cursor="Hand" 
+                Background="#00000000" 
+                FontSize="13"
+                Command="{Binding LoginButton_Click}"/>
+
+        <Grid Grid.Row="6" 
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center" 
+              Width="186" Height="20">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"/>
+                <ColumnDefinition Width="1*"/>
+            </Grid.ColumnDefinitions>
+
+            <TextBlock Text="Забыл пароль?"
+                       Name="ForgotPassword"
+                       Width="75" 
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Left" 
+                       Cursor="Hand"
+                       FontSize="11">
+
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" 
+                                Value="{DynamicResource ForegroundColor}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#a3a3a3" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+
+            </TextBlock>
+
+            <TextBlock Text="Регистрация"
+                       Width="75"
+                       Cursor="Hand"
+                       Grid.Column="1" 
+                       HorizontalAlignment="Right" 
+                       VerticalAlignment="Center" 
+                       FontSize="11"
+                       Name="Register">
+
+
+                <TextBlock.Style>
+                    <Style TargetType="TextBlock">
+                        <Setter Property="Foreground" Value="{DynamicResource ForegroundColor}" />
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Foreground" Value="#a3a3a3" />
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </TextBlock.Style>
+
+            </TextBlock>
+        </Grid>
 
     </Grid>
 

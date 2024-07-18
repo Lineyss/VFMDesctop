@@ -26,12 +26,12 @@ namespace VFMDesctop.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("")]
-        public string Json {
+        public string CurrentTheme {
             get {
-                return ((string)(this["Json"]));
+                return ((string)(this["CurrentTheme"]));
             }
             set {
-                this["Json"] = value;
+                this["CurrentTheme"] = value;
             }
         }
     }

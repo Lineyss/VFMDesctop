@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush Color="#FBFBFB" x:Key="BackgroundColor"/>
+    <SolidColorBrush Color="#000000" x:Key="BackgroundColorСheckBox"/>
+    <SolidColorBrush Color="#000000" x:Key="ForegroundColor"/>
+    <SolidColorBrush Color="#000000" x:Key="BorderBrushColor"/>
+    <BitmapImage  UriSource="/Images/Ligth/moon.png" x:Key="ThemeIcon" />
+    <BitmapImage  UriSource="/Images/Ligth/close_icon-ligth.png" x:Key="CloseIcon" />
+    <BitmapImage  UriSource="/Images/Ligth/minimize-ligth.png" x:Key="MinimizeIcon" />
+    <BitmapImage  UriSource="/Images/Ligth/door-closed-ligth.png" x:Key="ExitIcon" />
+    <BitmapImage  UriSource="/Images/Over/door-open-ligth.png" x:Key="ExitIconOver" />
+
+</ResourceDictionary>

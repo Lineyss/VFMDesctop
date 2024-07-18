@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\project\VFM\VFMDesctop\App.xaml
-41659134355
+61441919879
 
-372039433565
+36-842919431
 159526356244
-View\Components\BindablePasswordBox.xaml;View\Pages\AuthorizationPage.xaml;View\Pages\MainPage.xaml;View\Windows\MainWindow.xaml;
+Themes\DarkTheme.xaml;Themes\LigthTheme.xaml;View\Components\BindablePasswordBox.xaml;View\Pages\AuthorizationPage.xaml;View\Pages\MainPage.xaml;View\Windows\MainWindow.xaml;
 
 False
 

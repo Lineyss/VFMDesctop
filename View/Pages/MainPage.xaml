@@ -8,7 +8,7 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="MainPage">
 
-    <Grid Background="#bde0fe">
+    <Grid Margin="0,5,0,0">
 
         <Grid.RowDefinitions>
             <RowDefinition Height="1*"/>
@@ -21,66 +21,57 @@
                 <ColumnDefinition Width="1*"/>
             </Grid.ColumnDefinitions>
 
-            <StackPanel Orientation="Horizontal" 
-                    Grid.Column="0" >
-                <Button Name="Exit" 
-                    Grid.Column="1" 
-                    Command="{Binding ExitButton_Click}"
-                    Cursor="Hand" 
-                    BorderThickness="0"
-                    Foreground="#00000000" Margin="5,2,0,0">
-                    <Button.Background>
-                        <SolidColorBrush Color="#FFDDDDDD" Opacity="0"/>
-                    </Button.Background>
-                    <Button.BorderBrush>
-                        <SolidColorBrush Color="#FF707070" Opacity="0"/>
-                    </Button.BorderBrush>
-                    <Button.Style>
-                        <Style TargetType="Button">
-                            <Setter Property="Content">
-                                <Setter.Value>
-                                    <Image Source="/Images/doorClose.png"/>
-                                </Setter.Value>
-                            </Setter>
-                            <Style.Triggers>
-                                <Trigger Property="IsMouseOver" Value="true">
-                                    <Setter Property="Content">
-                                        <Setter.Value>
-                                            <Image Source="/Images/doorOpen.png"/>
-                                        </Setter.Value>
-                                    </Setter>
-                                </Trigger>
-                            </Style.Triggers>
-                        </Style>
-                    </Button.Style>
-                </Button>
-            </StackPanel>
+            <Image Name="Exit" 
+                   HorizontalAlignment="Left" 
+                   VerticalAlignment="Center" 
+                   Margin="5,0,0,0"
+                   Cursor="Hand">
 
-            <TextBlock Grid.Column="1" 
-                   Text="Привет Lineyss" 
+                <Image.InputBindings>
+                    <MouseBinding Gesture="LeftClick"
+                                  Command="{Binding ExitClick}"/>
+                </Image.InputBindings>
+
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Source"
+                                Value="{DynamicResource ExitIcon}"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver"
+                                     Value="True">
+                                <Setter Property="Source"
+                                        Value="{DynamicResource ExitIconOver}"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+
+            </Image>
+
+            <Label Name="Username" 
+                   Content="Привет Lineyss"
+                   Grid.Column="1" 
+                   VerticalAlignment="Center" 
                    HorizontalAlignment="Right" 
-                   VerticalAlignment="Center" Margin="0,0,10,0" FontFamily="Verdana"/>
+                   HorizontalContentAlignment="Center" 
+                   VerticalContentAlignment="Center"
+                   FontSize="14"
+                   Foreground="{DynamicResource ForegroundColor}"
+                   Margin="0,0,5,0"/>
 
         </Grid>
 
-        <Button x:Name="ConnectButton" 
-            Grid.Row="1"
-            BorderThickness="4"
-            BorderBrush="{Binding BorderConnectButton}"
-            Width="140"
-            Height="140" 
-            Cursor="Hand"
-            HorizontalAlignment="Center" 
-            VerticalAlignment="Center" 
-            Foreground="Black"
-            Command="{Binding ConnectButton_Click}">
-
-            <!-- <i:Interaction.Triggers>
-            <i:EventTrigger EventName="MouseEnter">
-                <i:InvokeCommandAction Command="{Binding ButtonConnect_MouseOver}"/>
-            </i:EventTrigger>
-        </i:Interaction.Triggers> -->
-
+        <Button Name="Connect" 
+                Background="#FFFD5353" 
+                BorderBrush="#00000000" 
+                Foreground="#00000000"
+                Grid.Row="1" 
+                HorizontalAlignment="Center" 
+                VerticalAlignment="Center"
+                Height="176"
+                Width="176"
+                BorderThickness="4"
+                Cursor="Hand">
 
             <Button.Resources>
                 <Style TargetType="Button">
@@ -110,21 +101,15 @@
 
             </Button.Resources>
 
-            <StackPanel VerticalAlignment="Center" Width="98">
-                <TextBlock x:Name="ConnectionStatus" 
-                       Text="{Binding ConnectionStatus_Text}" 
-                       HorizontalAlignment="Center" 
-                       TextAlignment="Center" 
-                       Margin="0,0,0,5"
-                       FontFamily="Verdana" 
-                       FontWeight="Bold"/>
+            <StackPanel Height="146">
+                <Label Content="Off" FontWeight="Bold" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
                 <Image Source="/Images/on.png"
-                   Height="65" 
-                   Width="97"/>
+                       Width="100"
+                       Height="100"/>
             </StackPanel>
 
         </Button>
 
     </Grid>
-    
+
 </Page>

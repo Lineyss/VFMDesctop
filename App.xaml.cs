@@ -1,5 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting; 
+using Microsoft.Extensions.Hosting;
+using System;
 using System.Windows;
 using VFMDesctop.Models.Interfaces;
 using VFMDesctop.Models.Repository;
@@ -60,6 +61,11 @@ namespace VFMDesctop
 
             var mainWindow = host.Services.GetRequiredService<MainWindow>();
             mainWindow.Show();
+
+            Current.Resources.MergedDictionaries.Insert(0, new ResourceDictionary
+            {
+                Source = new Uri($"/Themes/{SettingService.CurrentTheme}Theme.xaml", UriKind.Relative)
+            });
 
             base.OnStartup(e);
         }

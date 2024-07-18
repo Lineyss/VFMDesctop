@@ -52,6 +52,7 @@ namespace VFMDesctop.ViewModels.Pages
                 OnPropertyChanged();
             }
         }
+        public BindableCommand LoginButton_Click { get; set; }
 
         private readonly INavigationService navigationService;
         private readonly IFactory<MainPage> factoryMainPage;
@@ -64,7 +65,6 @@ namespace VFMDesctop.ViewModels.Pages
             LoginButton_Click = new BindableCommand(_ => Login());
         }
 
-        public BindableCommand LoginButton_Click { get; set; }
 
         private void Login() => navigationService.SetNavigate(factoryMainPage.Create());
     }

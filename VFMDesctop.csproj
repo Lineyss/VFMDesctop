@@ -205,6 +205,7 @@
     <Compile Include="Models\Services\JsonConverterServices.cs" />
     <Compile Include="Models\Services\NavigationService.cs" />
     <Compile Include="Models\Services\ServiceExtensions.cs" />
+    <Compile Include="Models\Services\SettingService.cs" />
     <Compile Include="ViewModels\Help\BindableCommand.cs" />
     <Compile Include="ViewModels\Help\NotifyPropertyChanged.cs" />
     <Compile Include="ViewModels\Pages\AuthorizationPageViewModel.cs" />
@@ -226,6 +227,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Themes\DarkTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\LigthTheme.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="View\Components\BindablePasswordBox.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -270,15 +279,46 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
-    <Resource Include="Images\doorOpen.png" />
+    <Resource Include="Images\Ligth\moon.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Images\doorClose.png" />
+    <Resource Include="Images\Over\doorOpen.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ligth\doorClose.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ligth\close_icon-ligth.png" />
+    <Resource Include="Images\Over\close_iconOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dark\minimize-dark.png" />
+    <Resource Include="Images\Over\minimizeOver.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dark\sun.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ligth\minimize-ligth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dark\close_icon-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Over\door-open-ligth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Ligth\door-closed-ligth.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Dark\door-closed-dark.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Over\door-open-dark.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets" Condition="Exists('packages\MaterialDesignThemes.5.1.0\build\MaterialDesignThemes.targets')" />
